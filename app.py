@@ -1,5 +1,4 @@
 import streamlit as st
-import os
 
 # 1. Настройка страницы в стиле спа-салона
 st.set_page_config(
@@ -22,10 +21,6 @@ p, span, label, li, div, h1, h2, h3, h4, h5, h6, b, th, td {
     font-family: 'Georgia', serif !important; 
 }
 
-/* ИСКЛЮЧЕНИЕ ДЛЯ ШАПКИ: буквы внутри неё ОБЯЗАТЕЛЬНО должны быть светлыми */
-.top-header h1 { color: #dfba9d !important; }
-.top-header p { color: #d1c2ba !important; }
-
 /* Красивые белые карточки для цен */
 .price-card {
     background-color: white !important;
@@ -36,23 +31,23 @@ p, span, label, li, div, h1, h2, h3, h4, h5, h6, b, th, td {
     margin-bottom: 20px;
 }
 
-/* Белые карточки не должны перекрашивать текст в белый */
+/* Текст внутри белых карточек */
 .price-card h3, .price-card p, .price-card h4, .price-card b {
     color: #3d2f2b !important;
 }
 </style>
 """, unsafe_allow_html=True)
 
-# 2. Обновленная шапка сайта с защитным классом top-header
-st.markdown(
-    "<div class='top-header' style='background-color: #3d2f2b; padding: 25px; border-radius: 8px; text-align: center; color: white;'>"
-    "<h1 style='margin: 0; font-size: 36px;'>Ketrin Plase</h1>"
-    "<p style='margin: 8px 0 0 0; font-size: 16px;'>Услуги • Сертификаты • Галерея • Цены • Контакты</p>"
-    "</div>", 
-    unsafe_allow_html=True
-)
-
-st.write("") 
+# 2. НОВАЯ НАДЕЖНАЯ ШАПКА САЙТА (БЕЗ СЛОЖНОГО HTML)
+# Создаем темный блок для шапки средствами Streamlit
+with st.container():
+    st.markdown(
+        "<div style='background-color: #3d2f2b; padding: 30px; border-radius: 12px; text-align: center; margin-bottom: 20px;'>"
+        "<h1 style='color: #dfba9d !important; margin: 0; font-size: 42px; font-family: Georgia, serif; font-weight: bold;'>Ketrin Plase</h1>"
+        "<p style='color: #d1c2ba !important; margin: 10px 0 0 0; font-size: 18px; letter-spacing: 1px;'>Услуги • Сертификаты • Галерея • Цены • Контакты</p>"
+        "</div>",
+        unsafe_allow_html=True
+    )
 
 # 3. Главный баннер
 col1, col2 = st.columns([1.2, 1])
@@ -77,20 +72,10 @@ st.divider()
 st.markdown("<h2 style='text-align: center;'>🌸 Наши услуги и привилегии</h2>", unsafe_allow_html=True)
 st.write("")
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-images_folder = os.path.join(BASE_DIR, "images")
-img1, img2, img3 = None, None, None
-
-if os.path.exists(images_folder):
-    files = sorted([f for f in os.listdir(images_folder) if os.path.isfile(os.path.join(images_folder, f))])
-    if len(files) >= 1: img1 = os.path.join(images_folder, files)
-    if len(files) >= 2: img2 = os.path.join(images_folder, files)
-    if len(files) >= 3: img3 = os.path.join(images_folder, files)
-
 p_col1, p_col2, p_col3 = st.columns(3)
 
 with p_col1:
-    if img1: st.image(img1, use_container_width=True)
+    st.image("images/image1.jpg", use_container_width=True)
     st.markdown("""
 <div class="price-card" style="margin-top: -15px;">
     <h3>🛁 Тайский массаж</h3>
@@ -101,7 +86,7 @@ with p_col1:
 """, unsafe_allow_html=True)
 
 with p_col2:
-    if img2: st.image(img2, use_container_width=True)
+    st.image("images/image2.jpg", use_container_width=True)
     st.markdown("""
 <div class="price-card" style="margin-top: -15px;">
     <h3>🌲 Массаж ног</h3>
@@ -112,7 +97,7 @@ with p_col2:
 """, unsafe_allow_html=True)
 
 with p_col3:
-    if img3: st.image(img3, use_container_width=True)
+    st.image("images/image3.jpg", use_container_width=True)
     st.markdown("""
 <div class="price-card" style="margin-top: -15px;">
     <h3>💆‍♂️ Спа-Массаж</h3>
