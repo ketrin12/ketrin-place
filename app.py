@@ -7,43 +7,42 @@ st.set_page_config(
     layout="wide"
 )
 
-# СТРОГИЙ СТИЛЬ: Устанавливаем картинку интерьера на задний фон всего сайта
-BACKGROUND_IMAGE_URL = "https://unsplash.com" # Временная замена, пока не загрузим твою
-
-st.markdown(f"""
+# СТРОГИЙ СТИЛЬ: Устанавливаем твою локальную картинку на задний фон всего сайта
+st.markdown("""
 <style>
-/* Устанавливаем серьезный фоновый рисунок с размытием, чтобы текст читался */
-.stApp, .main, [data-testid="stAppViewContainer"] {{ 
-    background-image: url("https://unsplash.com") !important;
+/* Загружаем твой фоновый рисунок из папки images */
+.stApp, .main, [data-testid="stAppViewContainer"] { 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("app/static/images/bg.jpg") !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
-}} 
+    background-color: #231f20 !important; /* Если картинка не найдена, фон будет благородным темным */
+} 
 
-/* Затемняющая подложка для читаемости текста */
-[data-testid="stHeader"] {{ background: rgba(0,0,0,0); }}
+/* Внутренний контейнер для читаемости */
+[data-testid="stHeader"] { background: rgba(0,0,0,0); }
 
 /* Все буквы на сайте делаем элегантными белыми/кремовыми для темного спа-фона */
-h1, h2, h3, h4, h5, h6, p, span, label, li, div, b {{ 
+h1, h2, h3, h4, h5, h6, p, span, label, li, div, b { 
     color: #f5ebe6 !important; 
     font-family: 'Georgia', serif !important; 
-}}
+}
 
 /* Премиальные карточки для услуг (темный полупрозрачный шоколадный оттенок) */
-.price-card {{
-    background-color: rgba(61, 47, 43, 0.85) !important;
+.price-card {
+    background-color: rgba(61, 47, 43, 0.9) !important;
     padding: 25px;
     border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
     border-top: 4px solid #bc987e !important;
     margin-bottom: 20px;
     backdrop-filter: blur(5px);
-}}
+}
 
 /* Текст внутри карточек услуг */
-.price-card h3 {{ color: #dfba9d !important; margin-top: 0; }}
-.price-card p {{ color: #e1d5ce !important; font-size: 15px; }}
-.price-card h4 {{ color: #dfba9d !important; margin-bottom: 0; }}
+.price-card h3 { color: #dfba9d !important; margin-top: 0; }
+.price-card p { color: #e1d5ce !important; font-size: 15px; }
+.price-card h4 { color: #dfba9d !important; margin-bottom: 0; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -78,7 +77,7 @@ with col2:
 st.divider()
 
 # 4. БЛОК: УСЛУГИ И ЦЕНЫ (Строгие карточки в ряд без смайликов)
-st.markdown("<h2 style='text-align: center; letter-spacing: 1px;'>🌸 Наши услуги и привилегии</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center; letter-spacing: 1px;'> Наши услуги и привилегии</h2>", unsafe_allow_html=True)
 st.write("")
 
 p_col1, p_col2, p_col3, p_col4 = st.columns(4)
@@ -86,7 +85,7 @@ p_col1, p_col2, p_col3, p_col4 = st.columns(4)
 with p_col1:
     st.markdown("""
 <div class="price-card">
-    <h3>🛁 Тайский массаж</h3>
+    <h3> Тайский массаж</h3>
     <p>Массаж всего тела. Эффективно помогает при проблемах со спиной и зажимах. Сеанс проходит под расслабляющую музыку. Перед началом процедуры гостям предлагается элитный чай или кофе на выбор.</p>
     <hr style='border-color: #bc987e;'>
     <h4>Цена: 45 BYN / час</h4>
@@ -96,7 +95,7 @@ with p_col1:
 with p_col2:
     st.markdown("""
 <div class="price-card">
-    <h3>🌲 Массаж ног</h3>
+    <h3>Массаж ног</h3>
     <p>Глубокое расслабление и снятие усталости. Включает в себя распаривание стоп на целебных алтайских травах, очищение пор, ингаляцию и чашечку горячего таежного чая с натуральным медом.</p>
     <hr style='border-color: #bc987e;'>
     <h4>Цена: 35 BYN / сеанс</h4>
@@ -106,7 +105,7 @@ with p_col2:
 with p_col3:
     st.markdown("""
 <div class="price-card">
-    <h3>💆‍♂️ Спа-Массаж</h3>
+    <h3> Спа-Массаж</h3>
     <p>Эксклюзивный уход за телом. Массаж горячими базальтовыми камнями или натуральным кокосовым маслом. Направлен на полное снятие мышечных зажимов и глубокое увлажнение кожи.</p>
     <hr style='border-color: #bc987e;'>
     <h4>Цена: 60 BYN / 60 мин</h4>
@@ -116,7 +115,7 @@ with p_col3:
 with p_col4:
     st.markdown("""
 <div class="price-card">
-    <h3>🛁 Молочная ванна</h3>
+    <h3> Молочная ванна</h3>
     <p>Премиальный ритуал красоты. Специальный чан или ванна наполняется теплым молочным раствором, экстрактами трав и лепестками роз. Очищает мысли, снимает усталость и обновляет кожу.</p>
     <hr style='border-color: #bc987e;'>
     <h4>Цена: 50 BYN / час</h4>
