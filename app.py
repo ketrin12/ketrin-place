@@ -86,7 +86,7 @@ with p_col1:
     if img1: st.image(img2, use_container_width=True)
     st.markdown("""
 <div class="price-card" style="margin-top: -15px;">
-    <h3>🛁 Тайский массаж</h3>
+    <h3>Тайский массаж</h3>
     <p><b>Что включено:</b> массаж всего тела! Помогает для тех у кого проблемы со спиной. В течении массажа будет играть расслабляющая музыка, а в начале массажа подают чай или кофе на выбор.</p>
     <hr style='border-color: #f5ebe6;'>
     <h4>Цена: 45 BYN / час</h4>
@@ -114,7 +114,17 @@ with p_col3:
     <h4>Цена: 60 BYN / 60 мин</h4>
 </div>
 """, unsafe_allow_html=True)
-
+    
+with p_col4:
+    if img1: st.image(img2, use_container_width=True)
+    st.markdown("""
+<div class="price-card" style="margin-top: -15px;">
+    <h3>молочная ванна</h3>
+    <p><b>Что включено:</b>чан/ванна наполняется водой и травами снимает усталость и происходит расслабление тела</p>
+    <hr style='border-color: #f5ebe6;'>
+    <h4>Цена: 50 BYN / час</h4>
+</div>
+""", unsafe_allow_html=True)
 st.divider()
 
 # 5. Форма отправки на почту
