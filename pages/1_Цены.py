@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Цены | Ketrin Plase", layout="wide")
+st.set_page_config(page_title="Цены | Ketrin Plase", layout="wide", initial_sidebar_state="expanded")
 
 st.markdown("""
 <style>
