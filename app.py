@@ -10,13 +10,13 @@ st.set_page_config(
 # СТРОГИЙ СТИЛЬ: Настраиваем благородный темный фон для премиум-салона
 st.markdown("""
 <style>
-/* Загружаем твой фоновый рисунок из папки images с красивым затемнением */
+/* Загружаем твой фоновый рисунок из твоего GitHub */
 .stApp, .main, [data-testid="stAppViewContainer"] { 
-    background-image: linear-gradient(rgba(20, 15, 13, 0.75), rgba(20, 15, 13, 0.75)), url("app/static/images/bg.jpg") !important;
+    background-image: linear-gradient(rgba(20, 15, 13, 0.8), rgba(20, 15, 13, 0.8)), url("https://githubusercontent.com") !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
-    background-color: #140f0d !important; /* Глубокий благородный темный цвет, если картинка долго грузится */
+    background-color: #140f0d !important; /* Глубокий благородный темный цвет */
 } 
 
 /* Внутренний контейнер для читаемости */
@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6, p, span, label, li, div, b {
     font-family: 'Georgia', serif !important; 
 }
 
-/* Премиальные карточки для услуг (темный полупрозрачный шоколадный оттенок) */
+/* Премиальные карточки для услуг */
 .price-card {
     background-color: rgba(45, 35, 32, 0.85) !important;
     padding: 25px;
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6, p, span, label, li, div, b {
 </style>
 """, unsafe_allow_html=True)
 
-# 2. Строгая шапка сайта (УБРАЛИ СЕРТИФИКАТЫ!)
+# 2. Строгая шапка сайта
 st.markdown(
     "<div style='background-color: rgba(25, 20, 18, 0.9); padding: 30px; border-radius: 12px; text-align: center; border: 1px solid #4a3b32;'>"
     "<h1 style='color: #dfba9d !important; margin: 0; font-size: 42px; letter-spacing: 2px;'>Ketrin Plase</h1>"
@@ -71,20 +71,20 @@ with col1:
     st.markdown("<h3 style='color: #dfba9d !important;'>Скидка -20% на первый визит</h3>", unsafe_allow_html=True)
 
 with col2:
-    # Главный баннер с фото интерьера
-    st.image("images/bg.jpg", caption="Атмосфера нашего салона", use_container_width=True)
+    # Прямая ссылка на фоновую картинку с твоего GitHub
+    st.image("https://githubusercontent.com", caption="Атмосфера нашего салона", use_container_width=True)
 
 st.divider()
 
-# 4. БЛОК: УСЛУГИ И ЦЕНЫ (Возвращаем твои красивые картинки!)
+# 4. БЛОК: УСЛУГИ И ЦЕНЫ
 st.markdown("<h2 style='text-align: center; letter-spacing: 1px;'>🌸 Наши услуги и привилегии</h2>", unsafe_allow_html=True)
 st.write("")
 
 p_col1, p_col2, p_col3, p_col4 = st.columns(4)
 
 with p_col1:
-    # Фото №1 для тайского массажа
-    st.image("images/image1.jpg", use_container_width=True)
+    # Прямая ссылка на image1 с твоего GitHub
+    st.image("https://githubusercontent.com", use_container_width=True)
     st.markdown("""
 <div class="price-card" style="margin-top: -15px;">
     <h3>🛁 Тайский массаж</h3>
@@ -95,8 +95,8 @@ with p_col1:
 """, unsafe_allow_html=True)
 
 with p_col2:
-    # Фото №2 для массажа ног
-    st.image("images/image2.jpg", use_container_width=True)
+    # Прямая ссылка на image2 с твоего GitHub
+    st.image("https://githubusercontent.com", use_container_width=True)
     st.markdown("""
 <div class="price-card" style="margin-top: -15px;">
     <h3>🌲 Массаж ног</h3>
@@ -107,8 +107,8 @@ with p_col2:
 """, unsafe_allow_html=True)
 
 with p_col3:
-    # Фото №3 для спа-массажа
-    st.image("images/image3.jpg", use_container_width=True)
+    # Прямая ссылка на image3 с твоего GitHub
+    st.image("https://githubusercontent.com", use_container_width=True)
     st.markdown("""
 <div class="price-card" style="margin-top: -15px;">
     <h3>💆‍♂️ Спа-Массаж</h3>
@@ -119,8 +119,8 @@ with p_col3:
 """, unsafe_allow_html=True)
 
 with p_col4:
-    # Фото №4 для молочной ванны
-    st.image("images/image4.jpg", use_container_width=True)
+    # Прямая ссылка на image4 с твоего GitHub
+    st.image("https://githubusercontent.com", use_container_width=True)
     st.markdown("""
 <div class="price-card" style="margin-top: -15px;">
     <h3>🛁 Молочная ванна</h3>
