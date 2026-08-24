@@ -32,6 +32,15 @@ h1, h2, h3, h4, h5, h6, p, span, label, li, div, b {
 [data-testid="stSidebar"], [data-testid="stSidebarNav"] {
     background-color: #2d2320 !important;
 }
+/* Прячем системный текст и заменяем его на красивую стрелочку */
+[data-testid="stSidebarCollapseButton"] button {
+    font-size: 0 !important;
+}
+[data-testid="stSidebarCollapseButton"] button::after {
+    content: "←" !important;
+    font-size: 24px !important;
+    color: #dfba9d !important;
+}
 
 /* Делаем буквы и иконки внутри меню крупными и золотыми */
 [data-testid="stSidebarNav"] span, [data-testid="stSidebarNav"] a {
