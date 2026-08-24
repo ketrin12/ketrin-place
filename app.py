@@ -84,7 +84,7 @@ p_col1, p_col2, p_col3, p_col4 = st.columns(4)
 
 with p_col1:
     # Публичная ссылка на твое фото №1
-    st.image(image1.jpg, use_container_width=True)
+    st.image("image1.jpg", use_container_width=True)
     st.markdown("""
 <div class="price-card" style="margin-top: -15px;">
     <h3>🛁 Тайский массаж</h3>
@@ -96,7 +96,7 @@ with p_col1:
 
 with p_col2:
     # Публичная ссылка на твое фото №2
-    st.image(image2.jpg, use_container_width=True)
+    st.image("image2.jpg", use_container_width=True)
     st.markdown("""
 <div class="price-card" style="margin-top: -15px;">
     <h3>🌲 Массаж ног</h3>
@@ -108,7 +108,7 @@ with p_col2:
 
 with p_col3:
     # Публичная ссылка на твое фото №3
-    st.image(image3.jpg, use_container_width=True)
+    st.image("image3.jpg", use_container_width=True)
     st.markdown("""
 <div class="price-card" style="margin-top: -15px;">
     <h3>💆‍♂️ Спа-Массаж</h3>
@@ -120,7 +120,7 @@ with p_col3:
 
 with p_col4:
     # Публичная ссылка на твое фото №4
-    st.image(image4.jpg, use_container_width=True)
+    st.image("image4.jpg", use_container_width=True)
     st.markdown("""
 <div class="price-card" style="margin-top: -15px;">
     <h3>🛁 Молочная ванна</h3>
