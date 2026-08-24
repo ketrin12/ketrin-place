@@ -3,8 +3,10 @@ import streamlit as st
 st.set_page_config(
     page_title="Ketrin Plase | Главная", 
     page_icon="🌸", 
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"  # ВОТ ЭТА СТРОКА ЗАСТАВИТ МЕНЮ БЫТЬ ВСЕГДА ОТКРЫТЫМ
 )
+
 
 # Темный премиум-стиль
 st.markdown("""
