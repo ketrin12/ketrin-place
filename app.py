@@ -83,7 +83,7 @@ if os.path.exists(images_folder):
 p_col1, p_col2, p_col3 = st.columns(3)
 
 with p_col1:
-    if img1: st.image(img1, use_container_width=True)
+    if img1: st.image(img2, use_container_width=True)
     st.markdown("""
 <div class="price-card" style="margin-top: -15px;">
     <h3>🛁 Тайский массаж</h3>
@@ -94,7 +94,7 @@ with p_col1:
 """, unsafe_allow_html=True)
 
 with p_col2:
-    if img2: st.image(img2, use_container_width=True)
+    if img2: st.image(img3, use_container_width=True)
     st.markdown("""
 <div class="price-card" style="margin-top: -15px;">
     <h3>🌲 Массаж ног</h3>
@@ -105,7 +105,7 @@ with p_col2:
 """, unsafe_allow_html=True)
 
 with p_col3:
-    if img3: st.image(img3, use_container_width=True)
+    if img3: st.image(img1, use_container_width=True)
     st.markdown("""
 <div class="price-card" style="margin-top: -15px;">
     <h3>💆‍♂️ Спа-Массаж</h3>
