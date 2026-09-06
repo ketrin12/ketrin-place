@@ -6,6 +6,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# НАСТРОЙКА ДИЗАЙНА СТРАНИЦЫ ГАЛЕРЕИ
 st.markdown("""
 <style>
 .stApp, .main, [data-testid="stAppViewContainer"] { 
@@ -15,9 +16,19 @@ st.markdown("""
     background-color: #140f0d !important;
 } 
 
-/* Намертво убираем уродливую системную надпись на смартфонах */
-[data-testid="stSidebarCollapseButton"] {
-    display: none !important;
+/* ТВОЁ РЕШЕНИЕ: Заменяем текст на аккуратную золотую стрелочку открытия меню */
+[data-testid="stSidebarCollapseButton"] button {
+    font-size: 0 !important;
+    background-color: #2d2320 !important;
+    border: 1px solid #bc987e !important;
+    border-radius: 8px !important;
+    padding: 5px 12px !important;
+}
+[data-testid="stSidebarCollapseButton"] button::after {
+    content: "→" !important;
+    font-size: 24px !important;
+    color: #dfba9d !important;
+    display: block !important;
 }
 
 h1, h2, p, span, div { color: #f5ebe6 !important; font-family: 'Georgia', serif !important; }
@@ -34,7 +45,7 @@ h1, h2, p, span, div { color: #f5ebe6 !important; font-family: 'Georgia', serif 
 """, unsafe_allow_html=True)
 
 st.title("📸 Галерея нашего салона")
-st.write("Посмотрите на уютную и расслабляющую атмосферу Ketrin Plase:")
+st.write("Посмотрите на уютную и расслабряющую атмосферу Ketrin Plase:")
 st.divider()
 
 g_col1, g_col2 = st.columns(2)
