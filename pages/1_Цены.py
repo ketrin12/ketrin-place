@@ -45,6 +45,21 @@ h1, h2, h3, h4, p, span, div { color: #f5ebe6 !important; font-family: 'Georgia'
     color: #dfba9d !important;
     font-size: 18px !important;
 }
+
+/* Полностью стираем текст внутри кнопки на любых экранах */
+[data-testid="stSidebarCollapseButton"] div, 
+[data-testid="stSidebarCollapseButton"] span,
+[data-testid="stSidebarCollapseButton"] svg {
+    display: none !important;
+    font-size: 0 !important;
+    color: transparent !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+[data-testid="stSidebarCollapseButton"] button {
+    display: none !important;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
