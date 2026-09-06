@@ -6,6 +6,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# НАСТРОЙКА ДИЗАЙНА СТРАНИЦЫ ГАЛЕРЕИ
 st.markdown("""
 <style>
 .stApp, .main, [data-testid="stAppViewContainer"] { 
@@ -15,9 +16,18 @@ st.markdown("""
     background-color: #140f0d !important;
 } 
 
-/* НАМЕРТВО УБИРАЕМ КНОПКУ СВЕРТЫВАНИЯ С КОРНЕМ */
-[data-testid="stSidebarCollapseButton"] {
-    display: none !important;
+/* РЕШЕНИЕ С ТОЧКОЙ: Стираем буквы и рисуем аккуратную точку */
+[data-testid="stSidebarCollapseButton"] button {
+    font-size: 0 !important;
+    background: transparent !important;
+    border: none !important;
+}
+[data-testid="stSidebarCollapseButton"] button::after {
+    content: "•" !important;
+    font-size: 28px !important;
+    color: #dfba9d !important;
+    display: block !important;
+    line-height: 1 !important;
 }
 
 h1, h2, p, span, div { color: #f5ebe6 !important; font-family: 'Georgia', serif !important; }

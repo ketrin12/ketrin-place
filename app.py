@@ -18,9 +18,18 @@ st.markdown("""
     background-color: #140f0d !important;
 } 
 
-/* НАМЕРТВО УБИРАЕМ КНОПКУ СВЕРТЫВАНИЯ С КОРНЕМ */
-[data-testid="stSidebarCollapseButton"] {
-    display: none !important;
+/* РЕШЕНИЕ С ТОЧКОЙ: Стираем буквы и рисуем аккуратную точку */
+[data-testid="stSidebarCollapseButton"] button {
+    font-size: 0 !important; /* Убираем текст double_arrow */
+    background: transparent !important;
+    border: none !important;
+}
+[data-testid="stSidebarCollapseButton"] button::after {
+    content: "•" !important; /* Ставим аккуратную точку */
+    font-size: 28px !important;
+    color: #dfba9d !important; /* Красим в золото */
+    display: block !important;
+    line-height: 1 !important;
 }
 
 /* Элегантные шрифты для текста */

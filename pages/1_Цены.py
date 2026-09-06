@@ -15,9 +15,18 @@ st.markdown("""
     background-color: #140f0d !important;
 } 
 
-/* НАМЕРТВО УБИРАЕМ КНОПКУ СВЕРТЫВАНИЯ С КОРНЕМ */
-[data-testid="stSidebarCollapseButton"] {
-    display: none !important;
+/* РЕШЕНИЕ С ТОЧКОЙ: Стираем буквы и рисуем аккуратную точку */
+[data-testid="stSidebarCollapseButton"] button {
+    font-size: 0 !important;
+    background: transparent !important;
+    border: none !important;
+}
+[data-testid="stSidebarCollapseButton"] button::after {
+    content: "•" !important;
+    font-size: 28px !important;
+    color: #dfba9d !important;
+    display: block !important;
+    line-height: 1 !important;
 }
 
 h1, h2, h3, h4, p, span, div { color: #f5ebe6 !important; font-family: 'Georgia', serif !important; }
@@ -56,7 +65,7 @@ with p_col1:
 
 with p_col2:
     st.image("https://ibb.co", use_container_width=True)
-    st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>🌲 Массаж ног</h3><p>Распаривание ног на алтайских травах, очищение пор, ингаляция и таежный чай с медом.</p><hr><h4 style="color:#dfba9d!important;">Цена: 35 BYN / сеанс</h4></div>""", unsafe_allow_html=True)
+    st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>🌲 Массаж ног</h3><p>Распаривание ног на алтайских травах, очищение пор, ингаляция и таежный чай с medom.</p><hr><h4 style="color:#dfba9d!important;">Цена: 35 BYN / сеанс</h4></div>""", unsafe_allow_html=True)
 
 with p_col3:
     st.image("https://ibb.co", use_container_width=True)
