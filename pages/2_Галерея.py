@@ -6,7 +6,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# НАСТРОЙКА ДИЗАЙНА СТРАНИЦЫ ГАЛЕРЕИ
 st.markdown("""
 <style>
 .stApp, .main, [data-testid="stAppViewContainer"] { 
@@ -16,19 +15,9 @@ st.markdown("""
     background-color: #140f0d !important;
 } 
 
-/* ТВОЁ РЕШЕНИЕ: Заменяем текст на аккуратную золотую стрелочку открытия меню */
-[data-testid="stSidebarCollapseButton"] button {
-    font-size: 0 !important;
-    background-color: #2d2320 !important;
-    border: 1px solid #bc987e !important;
-    border-radius: 8px !important;
-    padding: 5px 12px !important;
-}
-[data-testid="stSidebarCollapseButton"] button::after {
-    content: "→" !important;
-    font-size: 24px !important;
-    color: #dfba9d !important;
-    display: block !important;
+/* НАМЕРТВО УБИРАЕМ КНОПКУ СВЕРТЫВАНИЯ С КОРНЕМ */
+[data-testid="stSidebarCollapseButton"] {
+    display: none !important;
 }
 
 h1, h2, p, span, div { color: #f5ebe6 !important; font-family: 'Georgia', serif !important; }

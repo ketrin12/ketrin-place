@@ -7,7 +7,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ПРЕМИУМ-СТИЛЬ И ЗАМЕНА СИСТЕМНОГО ТЕКСТА НА ИКОНКУ МЕНЮ
 st.markdown("""
 <style>
 /* Фиксируем красивый темный фон */
@@ -19,19 +18,9 @@ st.markdown("""
     background-color: #140f0d !important;
 } 
 
-/* ТВОЁ РЕШЕНИЕ: превращаем корявые системные буквы в красивую золотую иконку меню */
-[data-testid="stSidebarCollapseButton"] button {
-    font-size: 0 !important; /* Полностью стираем буквы текста */
-    background-color: #2d2320 !important; /* Делаем кнопку шоколадной */
-    border: 1px solid #bc987e !important;
-    border-radius: 8px !important;
-    padding: 5px 12px !important;
-}
-[data-testid="stSidebarCollapseButton"] button::after {
-    content: "☰" !important; /* Рисуем красивый значок меню-гамбургера */
-    font-size: 24px !important;
-    color: #dfba9d !important; /* Красим в благородное золото */
-    display: block !important;
+/* НАМЕРТВО УБИРАЕМ КНОПКУ СВЕРТЫВАНИЯ С КОРНЕМ */
+[data-testid="stSidebarCollapseButton"] {
+    display: none !important;
 }
 
 /* Элегантные шрифты для текста */
