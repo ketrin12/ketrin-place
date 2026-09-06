@@ -1,6 +1,10 @@
 import streamlit as st
 
-st.set_page_config(page_title="Цены | Ketrin Plase", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(
+    page_title="Цены | Ketrin Plase", 
+    layout="wide", 
+    initial_sidebar_state="expanded"
+)
 
 st.markdown("""
 <style>
@@ -10,7 +14,15 @@ st.markdown("""
     background-attachment: fixed !important;
     background-color: #140f0d !important;
 } 
+
+/* Намертво убираем уродливую системную надпись на смартфонах */
+[data-testid="stSidebarCollapseButton"] {
+    display: none !important;
+}
+
 h1, h2, h3, h4, p, span, div { color: #f5ebe6 !important; font-family: 'Georgia', serif !important; }
+
+/* Карточки цен */
 .price-card {
     background-color: rgba(45, 35, 32, 0.85) !important;
     padding: 25px;
@@ -20,6 +32,15 @@ h1, h2, h3, h4, p, span, div { color: #f5ebe6 !important; font-family: 'Georgia'
 }
 .price-card h3 { color: #dfba9d !important; margin-top: 0; }
 .price-card h4 { color: #dfba9d !important; margin-bottom: 0; }
+
+/* Оформление бокового меню */
+[data-testid="stSidebar"], [data-testid="stSidebarNav"] {
+    background-color: #2d2320 !important;
+}
+[data-testid="stSidebarNav"] span, [data-testid="stSidebarNav"] a {
+    color: #dfba9d !important;
+    font-size: 18px !important;
+}
 </style>
 """, unsafe_allow_html=True)
 

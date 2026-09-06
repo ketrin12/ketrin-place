@@ -1,6 +1,10 @@
 import streamlit as st
 
-st.set_page_config(page_title="Галерея | Ketrin Plase", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(
+    page_title="Галерея | Ketrin Plase", 
+    layout="wide", 
+    initial_sidebar_state="expanded"
+)
 
 st.markdown("""
 <style>
@@ -10,7 +14,22 @@ st.markdown("""
     background-attachment: fixed !important;
     background-color: #140f0d !important;
 } 
-h1, h2, p { color: #f5ebe6 !important; font-family: 'Georgia', serif !important; }
+
+/* Намертво убираем уродливую системную надпись на смартфонах */
+[data-testid="stSidebarCollapseButton"] {
+    display: none !important;
+}
+
+h1, h2, p, span, div { color: #f5ebe6 !important; font-family: 'Georgia', serif !important; }
+
+/* Оформление бокового меню */
+[data-testid="stSidebar"], [data-testid="stSidebarNav"] {
+    background-color: #2d2320 !important;
+}
+[data-testid="stSidebarNav"] span, [data-testid="stSidebarNav"] a {
+    color: #dfba9d !important;
+    font-size: 18px !important;
+}
 </style>
 """, unsafe_allow_html=True)
 

@@ -7,10 +7,10 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ТЕМНЫЙ СТИЛЬ И НАСТРОЙКА БОКОВОГО МЕНЮ
+# ПРЕМИУМ-СТИЛЬ И СКРЫТИЕ СИСТЕМНЫХ НАДПИСЕЙ
 st.markdown("""
 <style>
-/* Загружаем фоновый рисунок из интернета с красивым затемнением */
+/* Фиксируем красивый темный фон */
 .stApp, .main, [data-testid="stAppViewContainer"] { 
     background-image: linear-gradient(rgba(20, 15, 13, 0.8), rgba(20, 15, 13, 0.8)), url("https://ibb.co") !important;
     background-size: cover !important;
@@ -19,44 +19,31 @@ st.markdown("""
     background-color: #140f0d !important;
 } 
 
-/* Внутренний контейнер для читаемости */
-[data-testid="stHeader"] { background: rgba(0,0,0,0); }
+/* Намертво убираем уродливую системную надпись на смартфонах */
+[data-testid="stSidebarCollapseButton"] {
+    display: none !important;
+}
 
-/* Все буквы на сайте делаем элегантными белыми/кремовыми */
+/* Элегантные шрифты для текста */
 h1, h2, h3, h4, h5, h6, p, span, label, li, div, b { 
     color: #f5ebe6 !important; 
     font-family: 'Georgia', serif !important; 
 }
 
-/* Перекрашиваем боковое меню в строгий темный цвет шоколада */
+/* Шоколадное боковое меню */
 [data-testid="stSidebar"], [data-testid="stSidebarNav"] {
     background-color: #2d2320 !important;
 }
-/* Намертво убираем кнопку с уродливой системной надписью */
-[data-testid="stSidebarCollapseButton"] {
-    display: none !important;
-}
 
-/* Прячем системный текст и заменяем его на красивую стрелочку */
-[data-testid="stSidebarCollapseButton"] button {
-    font-size: 0 !important;
-}
-[data-testid="stSidebarCollapseButton"] button::after {
-    content: "←" !important;
-    font-size: 24px !important;
-    color: #dfba9d !important;
-}
-
-/* Делаем буквы и иконки внутри меню крупными и золотыми */
+/* Золотые вкладки в меню */
 [data-testid="stSidebarNav"] span, [data-testid="stSidebarNav"] a {
     color: #dfba9d !important;
     font-size: 18px !important;
-    font-family: 'Georgia', serif !important;
 }
 </style>
 """, unsafe_allow_html=True)
 
-# 2. Строгая шапка сайта
+# Шапка сайта
 st.markdown(
     "<div style='background-color: rgba(25, 20, 18, 0.9); padding: 30px; border-radius: 12px; text-align: center; border: 1px solid #4a3b32;'>"
     "<h1 style='color: #dfba9d !important; margin: 0; font-size: 42px; letter-spacing: 2px;'>Ketrin Plase</h1>"
@@ -67,7 +54,6 @@ st.markdown(
 
 st.write("") 
 
-# 3. Баннер
 col1, col2 = st.columns([1.2, 1])
 with col1:
     st.markdown("<h4 style='color: #bc987e !important; text-transform: uppercase; letter-spacing: 2px;'>Эстетика релакса</h4>", unsafe_allow_html=True)
@@ -79,7 +65,7 @@ with col2:
 
 st.divider()
 
-# 4. Форма онлайн-записи
+# Форма онлайн-записи
 st.markdown("<h2>📩 Онлайн-резервирование визита</h2>", unsafe_allow_html=True)
 FORMSPREE_URL = "https://formspree.io" 
 
