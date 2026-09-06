@@ -18,11 +18,6 @@ st.markdown("""
     background-color: #140f0d !important;
 } 
 
-/* РЕШЕНИЕ С ТОЧКОЙ: Стираем буквы и рисуем аккуратную точку */
-[data-testid="stSidebarCollapseButton"] button {
-    font-size: 0 !important; /* Убираем текст double_arrow */
-    background: transparent !important;
-    border: none !important;
 }
 [data-testid="stSidebarCollapseButton"] button::after {
     content: "•" !important; /* Ставим аккуратную точку */
