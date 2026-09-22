@@ -1,67 +1,18 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Цены | Ketrin Plase", 
-    layout="wide", 
-    initial_sidebar_state="expanded"
+    page_title="Цены | Ketrin Plase",
+    layout="wide",
+    initial_sidebar_state="collapsed"
 )
 
-st.markdown("""
-<style>
-.stApp, .main, [data-testid="stAppViewContainer"] { 
-    background-image: linear-gradient(rgba(20, 15, 13, 0.8), rgba(20, 15, 13, 0.8)), url("https://ibb.co") !important;
-    background-size: cover !important;
-    background-attachment: fixed !important;
-    background-color: #140f0d !important;
-} 
+# Простая стандартная кнопка возврата без всяких стилей
+if st.button("⬅️ Вернуться на главную", use_container_width=True):
+    st.switch_page("app.py")
 
-}
-[data-testid="stSidebarCollapseButton"] button::after {
-    content: "•" !important;
-    font-size: 28px !important;
-    color: #dfba9d !important;
-    display: block !important;
-    line-height: 1 !important;
-}
-
-h1, h2, h3, h4, p, span, div { color: #f5ebe6 !important; font-family: 'Georgia', serif !important; }
-
-/* Карточки цен */
-.price-card {
-    background-color: rgba(45, 35, 32, 0.85) !important;
-    padding: 25px;
-    border-radius: 15px;
-    border-top: 4px solid #bc987e !important;
-    margin-bottom: 20px;
-}
-.price-card h3 { color: #dfba9d !important; margin-top: 0; }
-.price-card h4 { color: #dfba9d !important; margin-bottom: 0; }
-
-/* Оформление бокового меню */
-[data-testid="stSidebar"], [data-testid="stSidebarNav"] {
-    background-color: #2d2320 !important;
-}
-[data-testid="stSidebarNav"] span, [data-testid="stSidebarNav"] a {
-    color: #dfba9d !important;
-    font-size: 18px !important;
-}
-
-/* Полностью стираем текст внутри кнопки на любых экранах */
-[data-testid="stSidebarCollapseButton"] div, 
-[data-testid="stSidebarCollapseButton"] span,
-[data-testid="stSidebarCollapseButton"] svg {
-    display: none !important;
-    font-size: 0 !important;
-    color: transparent !important;
-    width: 0 !important;
-    height: 0 !important;
-}
-[data-testid="stSidebarCollapseButton"] button {
-    display: none !important;
-}
-
-</style>
-""")
+st.title("💆‍♀️ Наши услуги и цены")
+st.write("Ознакомьтесь с премиальными ритуалами нашего салона:")
+st.divider()
 
 st.title("🌸 Наши услуги и цены")
 st.write("Ознакомьтесь с премиальными ритуалами нашего салона:")
