@@ -38,4 +38,4 @@ st.markdown("<h2 style='text-align: center; color: #dfba9d;'>🌸 Галерея
 st.markdown("<br>", unsafe_allow_html=True)
 
 # Выводим фотку интерьера bg.jpg
-st.image("images/bg.jpg", caption="Уютная атмосфера релакса в Ketrin Plase", use_container_width=True)
+st.image("images/bg.jpg.webp", caption="Уютная атмосфера релакса в Ketrin Plase", use_container_width=True)

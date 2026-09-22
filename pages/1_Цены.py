@@ -64,19 +64,19 @@ p_col1, p_col2, p_col3, p_col4 = st.columns(4)
 
 with p_col1:
     # Тайский массаж = image2
-    st.image("images/image2.jpg.png", use_container_width=True)
+    st.image("images/image2.jpg", use_container_width=True)
     st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>💆‍♂️ Тайский массаж</h3><p>Массаж всего тела. Помогает при проблемах со спиной и зажимах. Подается элитный чай или кофе.</p></div>""", unsafe_allow_html=True)
     st.subheader("Цена: 45 BYN / час")
 
 with p_col2:
     # Массаж ног = image3
-    st.image("images/image3.jpg.png", use_container_width=True)
+    st.image("images/image3.jpg", use_container_width=True)
     st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>🌲 Массаж ног</h3><p>Распаривание ног на алтайских травах, очищение пор, ингаляция и таежный чай с медом.</p></div>""", unsafe_allow_html=True)
     st.subheader("Цена: 35 BYN / сеанс")
 
 with p_col3:
     # Спа-Массаж = image1
-    st.image("images/image1.jpg.png", use_container_width=True)
+    st.image("images/image4.jpg", use_container_width=True)
     st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>🪨 Спа-Массаж</h3><p>Массаж горячими базальтовыми камнями или кокосовым маслом. Снятие мышечных зажимов.</p></div>""", unsafe_allow_html=True)
     st.subheader("Цена: 60 BYN / 60 мин")
 
