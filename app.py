@@ -11,12 +11,14 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    /* 1. Полностью скрываем боковую панель и кнопку её открытия везде */
-    [data-testid="stSidebar"], [data-testid="collapsedControl"] {
+    /* Полностью скрываем боковую панель, кнопку открытия и всю верхнюю техническую шапку */
+    [data-testid="stSidebar"], 
+    [data-testid="collapsedControl"], 
+    [data-testid="stHeader"] {
         display: none !important;
     }
     
-    /* 2. Делаем кнопки всегда темными с золотой рамкой, даже при переводе */
+    /* Фиксируем темный цвет кнопок с золотой рамкой */
     .stButton > button {
         background-color: #140f0d !important;
         color: #bc987e !important;
