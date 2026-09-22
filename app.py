@@ -88,11 +88,20 @@ col1, col2 = st.columns([1.2, 1])
 
 with col1:
     st.markdown("<h4 style='color: #bc987e !important; text-transform: uppercase; letter-spacing: 2px;'>Эстетика релакса</h4>", unsafe_allow_html=True)
-    st.title("Добро пожаловать в Ketrin Plase")
-    st.write("Выберите интересующий вас раздел в боковом меню слева, чтобы посмотреть цены или открыть галерею нашего салона.")
+st.title("Добро пожаловать в Ketrin Plase")
+st.write("Выберите интересующий вас раздел в боковом меню слева, чтобы посмотреть цены или открыть галерею нашего салона.")
 
-with col2:
-    st.image("images/bg.jpg.webp", caption="Атмосфера нашего салона")
+# Добавляем крупные и понятные кнопки для мобильных пользователей прямо по центру
+st.markdown("### 📱 Быстрый переход по разделам:")
+col_menu1, col_menu2 = st.columns(2)
+
+with col_menu1:
+    if st.button("💰 Посмотреть ЦЕНЫ", use_container_width=True):
+        st.switch_page("pages/1_Цены.py") # Проверь, чтобы имя файла в скобках совпадало с твоим в папке pages
+
+with col_menu2:
+    if st.button("🖼️ Открыть ГАЛЕРЕЮ", use_container_width=True):
+        st.switch_page("pages/2_Галерея.py") # Проверь, чтобы имя файла в скобках совпадало с твоим в папке pages
 
 st.divider()
 
