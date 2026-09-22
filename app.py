@@ -80,9 +80,7 @@ with col1:
     st.write("Выберите интересующий вас раздел в боковом меню слева, чтобы посмотреть цены или открыть галерею нашего салона.")
 
 with col2:
-    # Используем встроенную крупную emoji-иконку вместо внешней картинки
-    st.markdown("<h1 style='text-align: center; font-size: 80px;'>💆‍♀️</h1>", unsafe_allow_html=True)
-    st.caption("<p style='text-align: center;'>Интерьер нашего салона</p>", unsafe_allow_html=True)
+    st.image("images/image1.jpg.png", caption="Интерьер нашего салона")
 
 st.divider()
 
