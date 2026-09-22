@@ -4,15 +4,30 @@ st.set_page_config(
     page_title="Ketrin Plase | Главная",
     page_icon="🌸",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"  # Сворачиваем меню по умолчанию
 )
 
-# Прячем некрасивую техническую надпись double_arrow_right на мобилках
+# Полностью убираем боковое меню и жестко задаем цвет кнопок
 st.markdown(
     """
     <style>
-    [data-testid="collapsedControl"] {
+    /* 1. Полностью скрываем боковую панель и кнопку её открытия везде */
+    [data-testid="stSidebar"], [data-testid="collapsedControl"] {
         display: none !important;
+    }
+    
+    /* 2. Делаем кнопки всегда темными с золотой рамкой, даже при переводе */
+    .stButton > button {
+        background-color: #140f0d !important;
+        color: #bc987e !important;
+        border: 1px solid #bc987e !important;
+        transition: all 0.3s ease;
+    }
+    
+    /* Эффект при наведении мышки на ПК */
+    .stButton > button:hover {
+        background-color: #bc987e !important;
+        color: #140f0d !important;
     }
     </style>
     """,
