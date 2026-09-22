@@ -73,13 +73,15 @@ st.markdown(
 st.write("") 
 
 col1, col2 = st.columns([1.2, 1])
+
 with col1:
     st.markdown("<h4 style='color: #bc987e !important; text-transform: uppercase; letter-spacing: 2px;'>Эстетика релакса</h4>", unsafe_allow_html=True)
     st.title("Добро пожаловать в Ketrin Plase")
     st.write("Выберите интересующий вас раздел в боковом меню слева, чтобы посмотреть цены или открыть галерею нашего салона.")
 
 with col2:
-    st.image("https://ibb.co", caption="Интерьер нашего салона", use_container_width=True)
+    # Добавляем красивое и качественное фото спа-интерьера по ссылке
+    st.image("https://unsplash.com", caption="Интерьер нашего салона")
 
 st.divider()
 
