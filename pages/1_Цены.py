@@ -6,9 +6,50 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Простая стандартная кнопка возврата без всяких стилей
+# Жестко задаем темную тему и стили для всей страницы
+st.markdown("""
+<style>
+    /* Скрываем меню и шапку */
+    [data-testid="stSidebar"], 
+    [data-testid="collapsedControl"], 
+    [data-testid="stHeader"] {
+        display: none !important;
+    }
+    
+    /* Делаем фон всей страницы темным */
+    .stApp, .main, [data-testid="stAppViewContainer"] {
+        background-color: #140f0d !important;
+    }
+    
+    /* Делаем все тексты на странице светлыми */
+    h1, h2, h3, h4, p, span, div, label { 
+        color: #f5ebe6 !important; 
+        font-family: 'Georgia', serif !important; 
+    }
+    
+    /* Стиль для кнопки возврата (чтобы она не была белой) */
+    .stButton > button {
+        background-color: #2d2320 !important;
+        color: #bc987e !important;
+        border: 1px solid #bc987e !important;
+    }
+    
+    /* Красивые темные карточки для цен */
+    .price-card {
+        background-color: #2d2320 !important;
+        padding: 25px;
+        border-radius: 15px;
+        border-top: 4px solid #bc987e !important;
+        margin-bottom: 20px;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# Кнопка возврата
 if st.button("⬅️ Вернуться на главную", use_container_width=True):
     st.switch_page("app.py")
+
+# Здесь мы убрали st.title, чтобы заголовок не дублировался!
 
 st.title("💆‍♀️ Наши услуги и цены")
 st.write("Ознакомьтесь с премиальными ритуалами нашего салона:")
