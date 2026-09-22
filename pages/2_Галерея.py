@@ -1,64 +1,41 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Галерея | Ketrin Plase", 
-    layout="wide", 
-    initial_sidebar_state="expanded"
+    page_title="Галерея | Ketrin Plase",
+    layout="wide",
+    initial_sidebar_state="collapsed"
 )
 
-# НАСТРОЙКА ДИЗАЙНА СТРАНИЦЫ ГАЛЕРЕИ
+# Жестко скрываем меню и красим фон в темный
 st.markdown("""
 <style>
-.stApp, .main, [data-testid="stAppViewContainer"] { 
-    background-image: linear-gradient(rgba(20, 15, 13, 0.8), rgba(20, 15, 13, 0.8)), url("https://ibb.co") !important;
-    background-size: cover !important;
-    background-attachment: fixed !important;
-    background-color: #140f0d !important;
-} 
-
-}
-[data-testid="stSidebarCollapseButton"] button::after {
-    content: "•" !important;
-    font-size: 28px !important;
-    color: #dfba9d !important;
-    display: block !important;
-    line-height: 1 !important;
-}
-
-h1, h2, p, span, div { color: #f5ebe6 !important; font-family: 'Georgia', serif !important; }
-
-/* Оформление бокового меню */
-[data-testid="stSidebar"], [data-testid="stSidebarNav"] {
-    background-color: #2d2320 !important;
-}
-[data-testid="stSidebarNav"] span, [data-testid="stSidebarNav"] a {
-    color: #dfba9d !important;
-    font-size: 18px !important;
-}
-
-/* Полностью стираем текст внутри кнопки на любых экранах */
-[data-testid="stSidebarCollapseButton"] div, 
-[data-testid="stSidebarCollapseButton"] span,
-[data-testid="stSidebarCollapseButton"] svg {
-    display: none !important;
-    font-size: 0 !important;
-    color: transparent !important;
-    width: 0 !important;
-    height: 0 !important;
-}
-[data-testid="stSidebarCollapseButton"] button {
-    display: none !important;
-}
-
+    [data-testid="stSidebar"], 
+    [data-testid="collapsedControl"], 
+    [data-testid="stHeader"] {
+        display: none !important;
+    }
+    .stApp, .main, [data-testid="stAppViewContainer"] {
+        background-color: #140f0d !important;
+    }
+    h1, h2, h3, h4, p, span, div { 
+        color: #f5ebe6 !important; 
+        font-family: 'Georgia', serif !important; 
+    }
+    .stButton > button {
+        background-color: #2d2320 !important;
+        color: #bc987e !important;
+        border: 1px solid #bc987e !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
-st.title("📸 Галерея нашего салона")
-st.write("Посмотрите на уютную и расслабряющую атмосферу Ketrin Plase:")
-st.divider()
+# Кнопка возврата на главную
+if st.button("⬅️ Вернуться на главную", use_container_width=True):
+    st.switch_page("app.py")
 
-g_col1, g_col2 = st.columns(2)
-with g_col1:
-    st.image("https://ibb.co", caption="Массажный кабинет премиум-класса", use_container_width=True)
-with g_col2:
-    st.image("https://unsplash.com", caption="Зона ожидания и релакса", use_container_width=True)
+# Наш красивый заголовок
+st.markdown("<h2 style='text-align: center; color: #dfba9d;'>🌸 Галерея нашего салона</h2>", unsafe_allow_html=True)
+st.markdown("<br>", unsafe_allow_html=True)
+
+# Выводим фотку интерьера bg.jpg
+st.image("images/bg.jpg", caption="Уютная атмосфера релакса в Ketrin Plase", use_container_width=True)

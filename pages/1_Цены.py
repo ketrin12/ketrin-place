@@ -59,28 +59,29 @@ st.title("🌸 Наши услуги и цены")
 st.write("Ознакомьтесь с премиальными ритуалами нашего салона:")
 st.divider()
 
-# Создаем 4充колонки для карточек услуг
+# Создаем 4 колонки для карточек услуг
 p_col1, p_col2, p_col3, p_col4 = st.columns(4)
 
 with p_col1:
-    # Используем точное имя файла с гитхаба
-    st.image("images/image1.jpg.png", use_container_width=True)
-    st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>💆‍♂️ Тайский массаж</h3><p>Массаж всего тела. Помогает при проблемы со спиной и зажимах. Подается элитный чай или кофе.</p></div>""", unsafe_allow_html=True)
+    # Тайский массаж = image2
+    st.image("images/image2.jpg.png", use_container_width=True)
+    st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>💆‍♂️ Тайский массаж</h3><p>Массаж всего тела. Помогает при проблемах со спиной и зажимах. Подается элитный чай или кофе.</p></div>""", unsafe_allow_html=True)
     st.subheader("Цена: 45 BYN / час")
 
 with p_col2:
-    st.image("images/image2.jpg.png", use_container_width=True)
+    # Массаж ног = image3
+    st.image("images/image3.jpg.png", use_container_width=True)
     st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>🌲 Массаж ног</h3><p>Распаривание ног на алтайских травах, очищение пор, ингаляция и таежный чай с медом.</p></div>""", unsafe_allow_html=True)
     st.subheader("Цена: 35 BYN / сеанс")
 
 with p_col3:
-    st.image("images/image3.jpg.png", use_container_width=True)
+    # Спа-Массаж = image1
+    st.image("images/image1.jpg.png", use_container_width=True)
     st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>🪨 Спа-Массаж</h3><p>Массаж горячими базальтовыми камнями или кокосовым маслом. Снятие мышечных зажимов.</p></div>""", unsafe_allow_html=True)
     st.subheader("Цена: 60 BYN / 60 мин")
 
 with p_col4:
-    # Для четвертой карточки временно берем bg.jpg.webp, которая точно была на гитхабе
-    st.image("images/bg.jpg.webp", use_container_width=True)
+    # Молочная ванна = image4
+    st.image("images/image4.jpg.png", use_container_width=True)
     st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>🛁 Молочная ванна</h3><p>Ванна наполняется теплым молочным раствором, экстрактами трав и лепестками роз.</p></div>""", unsafe_allow_html=True)
     st.subheader("Цена: 50 BYN / час")
-
