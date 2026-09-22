@@ -1,10 +1,22 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Ketrin Plase | Главная", 
-    page_icon="🌸", 
+    page_title="Ketrin Plase | Главная",
+    page_icon="🌸",
     layout="wide",
     initial_sidebar_state="expanded"
+)
+
+# Прячем некрасивую техническую надпись double_arrow_right на мобилках
+st.markdown(
+    """
+    <style>
+    [data-testid="collapsedControl"] {
+        display: none !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
 st.markdown("""
