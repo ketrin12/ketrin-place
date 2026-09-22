@@ -76,12 +76,12 @@ with p_col2:
 
 with p_col3:
     # Спа-Массаж = image1
-    st.image("images/image4.jpg.png", use_container_width=True)
+    st.image("images/image1.jpg.png", use_container_width=True)
     st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>🪨 Спа-Массаж</h3><p>Массаж горячими базальтовыми камнями или кокосовым маслом. Снятие мышечных зажимов.</p></div>""", unsafe_allow_html=True)
     st.subheader("Цена: 60 BYN / 60 мин")
 
 with p_col4:
     # Молочная ванна = image4
-    st.image("images/image4.jpg.png", use_container_width=True)
+    st.image("images/image4.jpg.webp", use_container_width=True)
     st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>🛁 Молочная ванна</h3><p>Ванна наполняется теплым молочным раствором, экстрактами трав и лепестками роз.</p></div>""", unsafe_allow_html=True)
     st.subheader("Цена: 50 BYN / час")
