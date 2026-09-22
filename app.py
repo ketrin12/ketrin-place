@@ -80,7 +80,7 @@ with col1:
     st.write("Выберите интересующий вас раздел в боковом меню слева, чтобы посмотреть цены или открыть галерею нашего салона.")
 
 with col2:
-    st.image("images/image1.jpg.png", caption="Интерьер нашего салона")
+    st.image("images/bg.jpg.webp", caption="Атмосфера нашего салона")
 
 st.divider()
 
