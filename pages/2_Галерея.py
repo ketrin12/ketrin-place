@@ -45,14 +45,14 @@ with gal_col2:
     # Переносим нашу картинку в центральную колонку
     st.image(
         "images/zona.jpg", 
-        caption="Комфортная зона ожидания в Ketrin Plase", 
+        caption="Комфортная зона ожидания", 
         use_container_width=True
     )
 
-with gal_col1:
+with gal_col2:
     # Переносим нашу картинку в центральную колонку
     st.image(
         "images/bg.jpg.webp", 
-        caption="Уютная атмосфера в Ketrin Place", 
+        caption="Рабочее место в зоне Спа-Массаж", 
         use_container_width=True
     )
