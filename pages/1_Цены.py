@@ -92,7 +92,7 @@ p_col5, p_col6, p_col7, p_col8 = st.columns(4)
 
 with p_col5:
     # Используем наш уютный фон со свечами для новой услуги
-    st.image("images/bg.jpg.webp", use_container_width=True)
+    st.image("images/image6.jpg", use_container_width=True)
     st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>🪨 Стоун-терапия</h3><p>Ритуал с использованием гладких горячих базальтовых камней. Идеально снимает стресс и прогревает мышцы.</p></div>""", unsafe_allow_html=True)
     st.subheader("Цена: 55 BYN / 50 мин")
 
