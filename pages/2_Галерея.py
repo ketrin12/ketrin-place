@@ -37,8 +37,6 @@ if st.button("⬅️ Вернуться на главную", use_container_widt
 st.markdown("<h2 style='text-align: center; color: #dfba9d;'>🌸 Галерея нашего салона</h2>", unsafe_allow_html=True)
 st.markdown("<br>", unsafe_allow_html=True)
 
-st.image("images/bg.jpg.webp", caption="Уютная атмосфера в Ketrin Place", use_container_width=True)
-
 # Создаем 3 колонки: боковые для отступов, средняя для фото
 # Числа [1, 2, 1] значат, что фотка по центру займет половину экрана, а бока — по четверти
 gal_col1, gal_col2, gal_col3 = st.columns([1, 2, 1])
@@ -46,7 +44,15 @@ gal_col1, gal_col2, gal_col3 = st.columns([1, 2, 1])
 with gal_col2:
     # Переносим нашу картинку в центральную колонку
     st.image(
-        "images/bg.jpg.webp", 
+        "images/zona.jpg", 
         caption="Комфортная зона ожидания в Ketrin Plase", 
+        use_container_width=True
+    )
+
+with gal_col1:
+    # Переносим нашу картинку в центральную колонку
+    st.image(
+        "images/bg.jpg.webp", 
+        caption="Уютная атмосфера в Ketrin Place", 
         use_container_width=True
     )
