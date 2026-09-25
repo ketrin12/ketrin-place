@@ -98,7 +98,7 @@ with p_col5:
 
 with p_col6:
     # Повторим красивую картинку с маслом или ванны для пилинга
-    st.image("images/image5.jpg.png", use_container_width=True)
+    st.image("images/image5.jpg.jpg", use_container_width=True)
     st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>🌿 Аромапиллинг</h3><p>Бережное очищение кожи скрабом на основе тростникового сахара, кокосового масла и эфирных масел цитруса.</p></div>""", unsafe_allow_html=True)
     st.subheader("Цена: 40 BYN / сеанс")
 
