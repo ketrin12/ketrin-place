@@ -39,3 +39,5 @@ st.markdown("<br>", unsafe_allow_html=True)
 
 # Выводим фотку интерьера bg.jpg
 st.image("images/bg.jpg.webp", caption="Уютная атмосфера релакса в Ketrin Plase", use_container_width=True)
+
+st.image("images/zona.jpg", caption="Комфортная зона ожидания в Ketrin Plase", use_container_width=True)
