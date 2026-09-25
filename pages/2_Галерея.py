@@ -41,7 +41,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 # Числа [1, 2, 1] значат, что фотка по центру займет половину экрана, а бока — по четверти
 gal_col1, gal_col2, gal_col3 = st.columns([1, 2, 1])
 
-with gal_col2:
+with gal_col3:
     # Переносим нашу картинку в центральную колонку
     st.image(
         "images/zona.jpg", 
@@ -49,7 +49,7 @@ with gal_col2:
         use_container_width=True
     )
 
-with gal_col2:
+with gal_col1:
     # Переносим нашу картинку в центральную колонку
     st.image(
         "images/bg.jpg.webp", 
