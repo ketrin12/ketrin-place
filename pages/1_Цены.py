@@ -85,3 +85,21 @@ with p_col4:
     st.image("images/image4.jpg.webp", use_container_width=True)
     st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>🛁 Молочная ванна</h3><p>Ванна наполняется теплым молочным раствором, экстрактами трав и лепестками роз.</p></div>""", unsafe_allow_html=True)
     st.subheader("Цена: 50 BYN / час")
+st.markdown("<br><br>", unsafe_allow_html=True) # Делаем отступ между рядами
+
+# Создаем второй ряд колонок (добавим еще 2 карточки)
+p_col5, p_col6, p_col7, p_col8 = st.columns(4)
+
+with p_col5:
+    # Используем наш уютный фон со свечами для новой услуги
+    st.image("images/bg.jpg.webp", use_container_width=True)
+    st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>🪨 Стоун-терапия</h3><p>Ритуал с использованием гладких горячих базальтовых камней. Идеально снимает стресс и прогревает мышцы.</p></div>""", unsafe_allow_html=True)
+    st.subheader("Цена: 55 BYN / 50 мин")
+
+with p_col6:
+    # Повторим красивую картинку с маслом или ванны для пилинга
+    st.image("images/image1.jpg.png", use_container_width=True)
+    st.markdown("""<div class="price-card" style="margin-top: -15px;"><h3>🌿 Аромапиллинг</h3><p>Бережное очищение кожи скрабом на основе тростникового сахара, кокосового масла и эфирных масел цитруса.</p></div>""", unsafe_allow_html=True)
+    st.subheader("Цена: 40 BYN / сеанс")
+
+# Колонки 7 и 8 оставляем пустыми, чтобы карточки не растягивались на весь экран, а шли ровно друг под другом!
