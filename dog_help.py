@@ -6,12 +6,12 @@ import base64
 
 # Настройка страницы (СТРОГО КАК БЫЛО ИЗНАЧАЛЬНО!)
 st.set_page_config(
-    page_title="Помощь хвостикам — Передержка и ОСВВ",
-    page_icon="🐾",
-    layout="wide"
+    page_title="Помощь хвостикам — Речица",
+    page_icon="🐾"
 )
 
-st.html('<meta name="google-site-verification" content="gBXDY2cWpT8mKjL-p9wXvN8lI4jI6R_t9bS3MvJ2oEE" />')
+# Вставляем тег верификации Google
+st.html('<meta name="google-site-verification" content="gBXDY2cW6llS-iFaCrFNSx6J6oi1wLvMSdvug5lAnbA" />')
 
 # Кастомные стили (Палитра Татьяны)
 st.markdown("""
@@ -468,11 +468,3 @@ elif menu_idx == 3:
         * **Straßenbetreuung:** Fütterung, Kastration und Impfung von Straßenhunden und -katzen.
         """)
         st.write("📞 **Kontakt:** +375 (29) 665-84-22 (Tatyana)")
-import streamlit as st
-
-# Безопасный вывод метатега верификации Google в код страницы
-st.html(
-    """
-    <meta name="google-site-verification" content="gBXDY2cW6llS-iFaCrFNSx6J6oi1wLvMSdvug5lAnbA" />
-    """
-)
