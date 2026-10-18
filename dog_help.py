@@ -4,12 +4,14 @@ import json
 import os
 import base64
 
-# 1. Настройка страницы и темы
+# Настройка страницы (СТРОГО КАК БЫЛО ИЗНАЧАЛЬНО!)
 st.set_page_config(
     page_title="Помощь хвостикам — Передержка и ОСВВ",
     page_icon="🐾",
     layout="wide"
 )
+
+st.html('<meta name="google-site-verification" content="gBXDY2cWpT8mKjL-p9wXvN8lI4jI6R_t9bS3MvJ2oEE" />')
 
 # Кастомные стили (Палитра Татьяны)
 st.markdown("""
@@ -241,9 +243,11 @@ if menu_idx == 0:
                         st.markdown(f'<span class="status-badge status-otlov">🚨 В отлове (Срочный вывоз!)</span>', unsafe_allow_html=True)
                     elif status == "На временной передержке":
                         st.markdown(f'<span class="status-badge status-perederzhka">🐾 На временной передержке</span>', unsafe_allow_html=True)
-                    else:
-                        st.markdown(f'<span class="status-badge status-street">🏡 На улице</span>', unsafe_allow_html=True)
-                    
+                    elif status == "Уехал(а) домой!":
+                        st.markdown(f'<span class="status-badge status-street">🏡 Уехал(а) домой! 🎉</span>', unsafe_allow_html=True)
+                    elif status == "Живет на улице (Нужна помощь)":
+                        st.markdown(f'<span class="status-badge status-street">🐾 Живет на улице (Нужна помощь)</span>', unsafe_allow_html=True)
+
                     # Имя и возраст
                     st.subheader(f"{pet.get('name', 'Без имени')} ({pet.get('age', 'Возраст не указан')})")
                     st.write(f"**{t['type']}:** {pet.get('type', '—')} | **{t['age_cat']}:** {pet.get('age_category', '—')}")
@@ -252,7 +256,7 @@ if menu_idx == 0:
                         st.warning(f"⚠️ **{t['needs']}:** {pet.get('needs')}")
                     
                     # Твоя кнопка помощи
-                    if st.button(f"{t['btn_help']} {pet.get('name')}", key=f"help_{pet.get('name')}_{pet.get('age')}"):
+                    if st.button(f"{t['btn_help']} {pet.get('name')}", key=f"help_{pet.get('name')}_{pet.get('age')}_{i}"):
                         st.success(t["alert_help"])
     # =========================================================================
 
@@ -327,7 +331,8 @@ elif menu_idx == 2:
                 new_status = st.selectbox("Текущий статус / Где находится?", [
                     "В отлове (Срочный вывоз!)", 
                     "На временной передержке", 
-                    "Живет на улице (Нужна помощь)"
+                    "Живет на улице (Нужна помощь)",
+                    "Уехал(а) домой!",
                 ])
                 new_age = st.text_input("Примерный возраст")
                 new_needs = st.text_input("В чем нуждается? (например: Сбор на корм, Нужен дом)")
@@ -378,7 +383,7 @@ elif menu_idx == 2:
                     cat_idx = cat_list.index(current_pet.get("age_category", "Взрослый питомец")) if current_pet.get("age_category") in cat_list else 1
                     edit_age_cat = st.selectbox("Категория возраста", cat_list, index=cat_idx)
                     
-                    edit_status = st.selectbox("Статус", ["В отлове (Срочный вывоз!)", "На временной передержке", "Живет на улице (Нужна помощь)"], index=0)
+                    edit_status = st.selectbox("Статус", ["В отлове (Срочный вывоз!)", "На временной передержке", "Живет на улице (Нужна помощь)", "Уехал(а) домой!"], index=0)
                     edit_age = st.text_input("Точный возраст", value=current_pet.get("age", ""))
                     edit_needs = st.text_input("Нужды", value=current_pet.get("needs", ""))
                     edit_desc = st.text_area("Описание", value=current_pet.get("desc", ""))
@@ -463,3 +468,11 @@ elif menu_idx == 3:
         * **Straßenbetreuung:** Fütterung, Kastration und Impfung von Straßenhunden und -katzen.
         """)
         st.write("📞 **Kontakt:** +375 (29) 665-84-22 (Tatyana)")
+import streamlit as st
+
+# Безопасный вывод метатега верификации Google в код страницы
+st.html(
+    """
+    <meta name="google-site-verification" content="gBXDY2cW6llS-iFaCrFNSx6J6oi1wLvMSdvug5lAnbA" />
+    """
+)
